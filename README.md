@@ -1,177 +1,235 @@
-# 📸 ilicam - Professional Camera Application for Linux
+# 📸 ilicam
+
+> A modern, lightweight camera application for Linux built with **C++**, **Qt6**, and **OpenCV**.
 
 ![License](https://img.shields.io/github/license/iliarezaei/ilicam)
-![AUR version](https://img.shields.io/aur/version/ilicam)
-![GitHub release](https://img.shields.io/github/v/release/iliarezaei/ilicam)
-![GitHub stars](https://img.shields.io/github/stars/iliarezaei/ilicam)
-
-> **A beautiful, powerful, and lightweight camera application built with C++, Qt6, and OpenCV**
+![GitHub Release](https://img.shields.io/github/v/release/iliarezaei/ilicam)
+![AUR Version](https://img.shields.io/aur/version/ilicam)
+![GitHub Stars](https://img.shields.io/github/stars/iliarezaei/ilicam)
 
 ---
 
 ## ✨ Features
 
-- 📷 **Live Camera Preview** with real-time processing
-- 🎨 **Real-time Filters**: Grayscale, Sepia, Edge Detection, Blur
-- 🔍 **Digital Zoom** (keys: `+` and `-`)
-- 📊 **RGB Histogram** display for color analysis
-- 🎛️ **Professional Controls**: Exposure, Saturation, Hue, Gain
-- 💾 **Save/Load Profiles** (JSON format)
-- 🎥 **Video Recording** (AVI/MP4)
-- 🖼️ **Photo Capture** (JPEG/PNG)
-- ⌨️ **Keyboard Shortcuts** for quick actions
-- 🎨 **Dark Theme** by default
-- 🚀 **Lightweight**: Only ~80KB binary size
+* 📷 Live camera preview
+* 🎨 Real-time image filters
+* 🔍 Digital zoom
+* 📊 RGB histogram
+* 🎛️ Camera controls
+
+  * Exposure
+  * Saturation
+  * Hue
+  * Gain
+* 💾 Save & load camera profiles (JSON)
+* 📸 Capture photos (PNG/JPEG)
+* 🎥 Record videos (AVI/MP4)
+* 🌙 Native dark theme
+* ⌨️ Keyboard shortcuts
 
 ---
 
-## 🚀 Installation
+## 🖼️ Available Filters
 
-### Arch Linux (AUR)
+| Filter         | Description          |
+| -------------- | -------------------- |
+| None           | Original image       |
+| Grayscale      | Black & White        |
+| Sepia          | Vintage effect       |
+| Edge Detection | Canny edge detection |
+| Blur           | Gaussian blur        |
+
+---
+
+# 🚀 Installation
+
+## Arch Linux (AUR)
 
 ```bash
 paru -S ilicam
+
 # or
+
 yay -S ilicam
-Manual Build
-bash
-git clone https://github.com/iliarezaei/ilicam.git
-cd ilicam
-mkdir build && cd build
-cmake ..
-make -j4
-sudo make install
-Dependencies
-Qt6 (Widgets)
-
-OpenCV (core, imgproc, imgcodecs, videoio)
-
-bash
-# Arch Linux
-sudo pacman -S qt6-base qt6-tools opencv cmake gcc make
-
-# Ubuntu/Debian
-sudo apt install qt6-base-dev qt6-tools-dev libopencv-dev cmake g++ make
-🎮 Keyboard Shortcuts
-Key	Action
-Space	📷 Take Photo
-R	🎥 Start/Stop Recording
-+ or =	🔍 Zoom In
--	🔍 Zoom Out
-F	👤 Toggle Face Detection (disabled)
-🎨 Filters
-Filter	Description
-None	Original image
-Grayscale	Black and white
-Sepia	Vintage warm tone
-Edge Detection	Canny edge detection
-Blur	Gaussian blur
-📸 Usage
-Launch ilicam from terminal or application menu
-
-Click "▶ Start Camera" to begin
-
-Apply filters, adjust brightness/contrast
-
-Use Space to capture photo
-
-Use R to start/stop recording
-
-🛠️ Development
-Build from Source
-bash
-git clone https://github.com/iliarezaei/ilicam.git
-cd ilicam
-mkdir build && cd build
-cmake ..
-make -j4
-./ilicam
-Project Structure
-text
-ilicam/
-├── CMakeLists.txt
-├── README.md
-├── LICENSE
-├── ilicam.desktop
-├── src/
-│   ├── main.cpp
-│   ├── MainWindow.h/cpp
-│   ├── CameraWorker.h/cpp
-│   ├── ImageProcessor.h/cpp
-│   ├── FaceDetector.h/cpp
-│   ├── ZoomManager.h/cpp
-│   └── SettingsManager.h/cpp
-└── build/
-🤝 Contributing
-Contributions are welcome! Here's how you can help:
-
-Fork the repository
-
-Create a new branch (git checkout -b feature/amazing-feature)
-
-Commit your changes (git commit -m 'Add some amazing feature')
-
-Push to the branch (git push origin feature/amazing-feature)
-
-Open a Pull Request
-
-Reporting Issues
-If you find a bug or have a feature request, please open an issue.
-
-📄 License
-This project is licensed under the GPL-3.0 License - see the LICENSE file for details.
-
-📞 Contact
-Author: iliarezaei
-
-GitHub: github.com/iliarezaei
-
-Email: iliarezaei69@gmail.com
-
-⭐ Star History
-If you like this project, please give it a star ⭐ on GitHub!
-
-Made with ❤️ for the Linux community
-
-🔧 Troubleshooting
-Camera not working?
-Check if camera is connected: ls -la /dev/video*
-
-Add user to video group: sudo usermod -aG video $USER
-
-Reboot after adding to group
-
-libjxl error
-If you see libjxl.so.0.12: cannot open shared object file, install it:
-
-bash
-sudo pacman -S libjxl
-📝 Changelog
-v1.0.2 (2026-07-18)
-Add desktop file for application menu
-
-Fix install target for AUR
-
-v1.0.1 (2026-07-18)
-Fix install target for AUR packaging
-
-v1.0.0 (2026-07-18)
-Initial release
-
-Camera preview with filters
-
-Photo capture and video recording
-
-RGB histogram
-
-Professional controls (Exposure, Saturation, Hue, Gain)
-
-Save/Load profiles (JSON)
-
-Digital zoom
-
-Dark theme
-
-text
+```
 
 ---
+
+## Build from Source
+
+### Clone
+
+```bash
+git clone https://github.com/iliarezaei/ilicam.git
+cd ilicam
+```
+
+### Build
+
+```bash
+mkdir build
+cd build
+
+cmake ..
+make -j$(nproc)
+```
+
+### Install
+
+```bash
+sudo make install
+```
+
+---
+
+# 📦 Dependencies
+
+### Arch Linux
+
+```bash
+sudo pacman -S qt6-base qt6-tools opencv cmake gcc make
+```
+
+### Ubuntu / Debian
+
+```bash
+sudo apt install \
+    qt6-base-dev \
+    qt6-tools-dev \
+    libopencv-dev \
+    cmake \
+    g++ \
+    make
+```
+
+---
+
+# 🎮 Keyboard Shortcuts
+
+| Key       | Action                                 |
+| --------- | -------------------------------------- |
+| **Space** | Capture Photo                          |
+| **R**     | Start / Stop Recording                 |
+| **+**     | Zoom In                                |
+| **-**     | Zoom Out                               |
+| **F**     | Toggle Face Detection *(Experimental)* |
+
+---
+
+# 📸 Usage
+
+1. Launch **ilicam**
+2. Click **Start Camera**
+3. Select a filter if desired
+4. Adjust camera controls
+5. Press **Space** to take a photo
+6. Press **R** to start or stop recording
+
+---
+
+# 📂 Project Structure
+
+```text
+ilicam
+├── CMakeLists.txt
+├── LICENSE
+├── README.md
+├── ilicam.desktop
+├── src
+│   ├── main.cpp
+│   ├── MainWindow.{h,cpp}
+│   ├── CameraWorker.{h,cpp}
+│   ├── ImageProcessor.{h,cpp}
+│   ├── FaceDetector.{h,cpp}
+│   ├── ZoomManager.{h,cpp}
+│   └── SettingsManager.{h,cpp}
+└── build
+```
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+```bash
+git checkout -b feature/my-feature
+git commit -m "Add new feature"
+git push origin feature/my-feature
+```
+
+Then open a Pull Request.
+
+---
+
+# 🔧 Troubleshooting
+
+## Camera not detected
+
+Check available devices:
+
+```bash
+ls /dev/video*
+```
+
+Add your user to the **video** group:
+
+```bash
+sudo usermod -aG video $USER
+```
+
+Log out and log back in.
+
+---
+
+## Missing libjxl
+
+```bash
+sudo pacman -S libjxl
+```
+
+---
+
+# 📝 Changelog
+
+## v1.0.2
+
+* Added desktop entry
+* Improved AUR installation
+
+## v1.0.1
+
+* Fixed AUR packaging
+
+## v1.0.0
+
+* Initial release
+* Live preview
+* Photo capture
+* Video recording
+* Image filters
+* RGB histogram
+* Camera controls
+* JSON profiles
+* Digital zoom
+
+---
+
+# 📄 License
+
+Licensed under the **GPL-3.0 License**.
+
+---
+
+# 👤 Author
+
+**Ilia Rezaei**
+
+* GitHub: https://github.com/iliarezaei
+* Email: [iliarezaei69@gmail.com](mailto:iliarezaei69@gmail.com)
+
+---
+
+## ⭐ Support
+
+If you find **ilicam** useful, consider giving the project a ⭐ on GitHub.
