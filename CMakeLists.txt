@@ -32,3 +32,10 @@ target_link_libraries(ilicam
 )
 
 target_include_directories(ilicam PRIVATE ${OpenCV_INCLUDE_DIRS})
+install(TARGETS ilicam
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
+install(FILES ilicam.desktop
+    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications
+)
