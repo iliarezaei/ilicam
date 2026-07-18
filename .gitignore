@@ -1,0 +1,16 @@
+build/
+*.o
+*.so
+*.a
+*.user
+*.autosave
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+*.pro.user
+*.pro.user.*
+*.swp
+*.swo
+*.log
+ilicam_autogen/

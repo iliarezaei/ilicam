@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=ilicam
+Comment=Professional Camera Application
+Icon=camera-photo
+Exec=ilicam
+Terminal=false
+Categories=Graphics;Photography;
+Keywords=camera;photo;video;webcam;
